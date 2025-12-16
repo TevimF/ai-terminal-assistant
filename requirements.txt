@@ -1,0 +1,5 @@
+google-generativeai
+# Bibliotecas opcionais (descomente se for usar):
+# openai
+# anthropic
+# groq
