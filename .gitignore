@@ -1,0 +1,9 @@
+# Ignorar arquivos sensíveis e temporários
+config/.env
+config/contexto.txt
+historico.log
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/

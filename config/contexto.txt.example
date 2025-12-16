@@ -1,0 +1,8 @@
+# Personalize seu assistente aqui
+# Exemplo de preferências:
+
+Minhas Preferências:
+- Responda sempre em Português Brasileiro.
+- Sou desenvolvedor, então pode ser técnico.
+- Se a resposta envolver instalação, prefira 'dnf' ou 'flatpak'.
+- Gosto de explicações curtas e comandos diretos.
