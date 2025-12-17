@@ -209,9 +209,12 @@ def extrair_comando(texto):
 def copiar_clipboard(texto):
     """Copia texto para a área de transferência"""
     try:
-        # Tenta wl-copy (Wayland)
-        subprocess.run(['wl-copy', texto], check=True, capture_output=True)
-        return True
+        # Tenta wl-copy (Wayland) - usa stdin para evitar problemas com caracteres especiais
+        proc = subprocess.Popen(['wl-copy'], stdin=subprocess.PIPE)
+        proc.communicate(texto.encode())
+        if proc.returncode == 0:
+            return True
+        raise subprocess.CalledProcessError(proc.returncode, 'wl-copy')
     except (subprocess.CalledProcessError, FileNotFoundError):
         try:
             # Tenta xclip (X11)
